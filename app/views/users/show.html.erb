@@ -1,0 +1,25 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="span8">
+    <%= render 'follow_form' if signed_in? %>
+    <span><%= link_to "Add property", new_property_path %></span>
+    <% if @user.properties.any? %>
+      <h3>Properties (<%= @user.properties.count %>)</h3>
+      <ol class="properties">
+        <%= render @properties %>
+      </ol>
+      <%= will_paginate @properties %>
+    <% end %>
+  </div>
+</div>

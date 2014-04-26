@@ -1,0 +1,7 @@
+
+<% if @properties.any? %>
+  <ol class="properties">
+    <%= render partial: 'properties/property', collection: @properties %>
+  </ol>
+  <%= will_paginate @properties %>
+<% end %>

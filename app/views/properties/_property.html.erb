@@ -1,0 +1,9 @@
+<li>
+  <%= link_to gravatar_for(property.user), property.user %>
+  <span class="address"><%= link_to property.name, property %></span>
+  <span class="address"><%= property.address %></span>
+  <span class="rent"><%= property.rent %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(property.created_at) %> ago.
+  </span>
+</li>
