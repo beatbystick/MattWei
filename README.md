@@ -1,16 +1,30 @@
-# Ruby on Rails Tutorial: sample application
+# Shang-Wei and Matt's test project
 
-This is the sample application for
-[*Ruby on Rails Tutorial: Learn Web Development with Rails*](http://railstutorial.org/)
-by [Michael Hartl](http://michaelhartl.com/). You can use this reference implementation to help track down errors if you end up having trouble with code in the tutorial. In particular, as a first debugging check I suggest getting the test suite to pass on your local machine:
+In order to run this you will need to:
+1. Install Homebrew
+2. Install rbenv by using Homebrew
+3. Install Ruby by using rbenv
+4. Install rails gem
+5. Install bundler gem
+6. Install elasticsearch by using Homebrew
 
-    $ cd /tmp
-    $ git clone https://github.com/railstutorial/sample_app_rails_4.git
-    $ cd sample_app_rails_4
-    $ cp config/database.yml.example config/database.yml
-    $ bundle install
-    $ bundle exec rake db:migrate
-    $ bundle exec rake db:test:prepare
-    $ bundle exec rspec spec/
+After installing ruby and rails, run 
+```
+bundle install
+```
+to install all the required gems.
 
-If the tests don't pass, it means there may be something wrong with your system. If they do pass, then you can debug your code by comparing it with the reference implementation.
+To start rails server, go to the project folder and run
+```
+bundle exec rails server
+```
+
+To start elasticsearch server, run
+```
+elasticsearch
+```
+given that the $PATH has included the elasticsearch command.
+
+Open browser and go to http://localhost:3000/
+
+
