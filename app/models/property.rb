@@ -1,4 +1,6 @@
 class Property < ActiveRecord::Base
+  searchkick
+
   belongs_to :user
   default_scope -> { order('created_at DESC') }
   validates :name, presence: true

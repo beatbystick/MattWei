@@ -24,5 +24,15 @@
     <%= link_to "Sign up now!", signup_path,
                                 class: "btn btn-large btn-primary" %>
   </div>
+  <div class="center hero-unit">
+    <%= form_tag(properties_path, method: "get", class: "form-inline") do %>
+      <div class="input-append">
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Property" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+  </div>
+
 
 <% end %>

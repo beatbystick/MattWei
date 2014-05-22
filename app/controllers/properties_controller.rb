@@ -4,7 +4,11 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
+    if params[:query].present?
+      @properties = Property.search(params[:query], page: params[:page])
+    else
+      @properties = Property.all
+    end
   end
 
   # GET /properties/1
