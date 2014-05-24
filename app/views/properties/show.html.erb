@@ -24,4 +24,11 @@
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=14&markers=#{@property.latitude}%2C#{@property.longitude}" %>
 </p>
 
-<%= link_to 'Edit', edit_property_path(@property) %>
+<div class="btn btn-meidum">
+  <%= link_to 'Edit', edit_property_path(@property) %>
+</div>
+
+<div class="btn btn-meidum">
+  <%= link_to "Add unit", new_unit_path(:property_id => @property.id, :property_name => @property.name) %>
+</div>
+
