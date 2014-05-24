@@ -11,4 +11,8 @@ class Property < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
+  def total_rent
+    units.map(&:rent).sum
+  end
 end
+

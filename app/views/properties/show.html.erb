@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name</strong>
+<span>
+<h1>
   <%= @property.name %>
-</p>
+</h1>
 
 <p>
   <strong>Address:</strong>
@@ -11,8 +11,11 @@
 </p>
 
 <p>
-  <strong>Rent:</strong>
-  <%= @property.rent %>
+  <strong>Total Rent </strong>
+  <%= @property.total_rent %>
+  <strong> in </strong>
+  <%= @property.units.count %>
+  <strong> units</strong>
 </p>
 
 <p>
@@ -32,3 +35,26 @@
   <%= link_to "Add unit", new_unit_path(:property_id => @property.id, :property_name => @property.name) %>
 </div>
 
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="address">unit</th>
+      <th>Rent</th>
+      <th>Bedrooms</th>
+      <th>Bathrooms</th>
+      <th>Sq. ft.</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property.units.each do |unit| %>
+      <tr>
+        <td><%= link_to unit.unit, unit %></td>
+        <td><%= unit.rent %></td>
+        <td><%= unit.bedrooms %></td>
+        <td><%= unit.bathrooms %></td>
+        <td><%= unit.sqft %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
