@@ -5,7 +5,7 @@
     <tr>
       <th class="address">Name</th>
       <th>Address</th>
-      <th>Rent</th>
+      <th>Total Rent</th>
       <th>Description</th>
       <th></th>
       <th></th>
@@ -18,7 +18,7 @@
       <tr>
         <td><%= link_to property.name, property %></td>
         <td><%= property.address %></td>
-        <td><%= property.rent %></td>
+        <td><%= property.total_rent %></td>
         <td><%= property.description %></td>
         <td>
         <% if current_user?(property.user) %>
